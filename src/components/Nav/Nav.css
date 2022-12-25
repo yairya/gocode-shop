@@ -1,0 +1,30 @@
+.product-filter {
+    display: flex;
+    padding: 30px 0;
+  }
+
+  .sort {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  .collection-sort {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .collection-sort:first-child {
+    padding-right: 20px;
+  }
+  
+
+      
+  @media (max-width: 480px) {
+    .product-filter {
+      flex-direction: column;
+    }
+  
+    .sort {
+      align-self: flex-start;
+    }
+  }
