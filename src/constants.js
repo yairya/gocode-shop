@@ -1,3 +1,1 @@
-const ALL_CATEGORIES = "All categories";
-
-export default ALL_CATEGORIES;
+export const ALL_CATEGORIES = "All categories";

@@ -4,7 +4,38 @@ import Nav from "./components/Nav/Nav"
 import SectionProduct from "./components/SectionProduct/SectionProduct"
 import appData from "./data/AppData"
 
+
+// const resJsonGET = async (address) => 
+// {
+//   const response = await fetch (address).then(response => 
+//       {
+//           if( ! response.ok)
+//           {
+//               throw `fetch call falied with status: ${response.status}`;
+//           }
+//           return response;
+//       })
+//       .catch(err =>
+//       {
+//           console.log(`catch err: ${err}`);
+//       });
+
+//   const resJson = await response.json().then(json => 
+//       {
+//           return json;
+//       })
+//       .catch(err =>
+//       {
+//           console.log(err);
+//       });
+
+//   // appData = resJson;
+//   console.log(resJson);
+// }
+
 function App() {
+
+  // resJsonGET("https://fakestoreapi.com/products");
   const [currentCategory, setCategory] = useState("All categories");
   const setCurrentCategory = (category) =>
   {
