@@ -24,12 +24,13 @@ function App() {
 
   useEffect(() => {
     resJsonGET("https://fakestoreapi.com/products", setProducts);
+    // products.forEach((p) => p.amount = 0);
   },[]);
 
   const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
 
   return (
-    <ProductContext.Provider value={{products, categories, currentCategory, setCategory}}>
+    <ProductContext.Provider value={{products, setProducts, categories, currentCategory, setCategory}}>
       <div>
           <Nav/>
           <SectionProduct/>
