@@ -4,6 +4,7 @@ import Nav from "./components/Nav/Nav"
 import SectionProduct from "./components/SectionProduct/SectionProduct"
 import ProductContext from './components/ProductContext/ProductContext'
 import * as Constants from "./constants"
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 
 const resJsonGET = async (address, setFunc) => {
   try{
@@ -24,7 +25,6 @@ function App() {
 
   useEffect(() => {
     resJsonGET("https://fakestoreapi.com/products", setProducts);
-    // products.forEach((p) => p.amount = 0);
   },[]);
 
   const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
@@ -34,6 +34,7 @@ function App() {
       <div>
           <Nav/>
           <SectionProduct/>
+          <ShoppingCart/>
       </div>
     </ProductContext.Provider>
   );
