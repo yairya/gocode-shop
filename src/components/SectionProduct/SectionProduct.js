@@ -16,9 +16,7 @@ const SectionProduct = () => {
             clone[productIndex].amount > 0 ? clone[productIndex].amount -= 1 : clone[productIndex].amount = 0
         }
         setProducts(clone)
-
     }
-
 
     const productCards = products.filter(product => product.category === currentCategory || currentCategory === Constants.ALL_CATEGORIES)
         .map( (product, index) => <ProductCard key={index} id={product.id} imgSrc={product.image} title={product.title} price={product.price} productToCart={ProductToCart} amount={product.amount ? product.amount : 0 }/>);

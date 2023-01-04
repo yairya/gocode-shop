@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShoppingCartProduct = ({id, imgSrc, title, price, amount}) => {
+const ShoppingCartProduct = ({id, imgSrc, title, price, amount, removeFromCart}) => {
     return(
         <div className="shopping-cart-product">
             <div className="product-image">
@@ -11,7 +11,7 @@ const ShoppingCartProduct = ({id, imgSrc, title, price, amount}) => {
                 <h5>serial number: {id}</h5>
                 <p>amount: {amount}</p>
                 <h6>total price: {price * amount}</h6>
-                {/* <button onClick={()=> productToCart(id,"increment")}>Add to cart</button> */}
+                <button onClick={()=> removeFromCart(id)}>Remove</button>
             </div>
       </div>
     )
