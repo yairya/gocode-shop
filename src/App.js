@@ -5,6 +5,7 @@ import SectionProduct from "./components/SectionProduct/SectionProduct"
 import ProductContext from './components/ProductContext/ProductContext'
 import * as Constants from "./constants"
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import ToggleButton from './components/ToggleButton/ToggleButton';
 
 const resJsonGET = async (address, setFunc) => {
   try{
@@ -33,6 +34,7 @@ function App() {
     <ProductContext.Provider value={{products, setProducts, categories, currentCategory, setCategory}}>
       <div>
           <Nav/>
+          <ToggleButton/>
           <SectionProduct/>
           <ShoppingCart/>
       </div>
