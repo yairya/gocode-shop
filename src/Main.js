@@ -1,12 +1,11 @@
 import React ,{useState, useEffect} from 'react'
-import Routes from 'react-router-dom'
+import {Routes, Route, BrowserRouter} from "react-router-dom"
 import './App.css';
-import Nav from "./components/Nav/Nav"
-import SectionProduct from "./components/SectionProduct/SectionProduct"
 import ProductContext from './components/ProductContext/ProductContext'
 import * as Constants from "./constants"
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import ToggleButton from './components/ToggleButton/ToggleButton';
+import About from './views/About';
+import Home from './views/Home';
+
 
 const resJsonGET = async (address, setFunc) => {
   try{
@@ -18,7 +17,6 @@ const resJsonGET = async (address, setFunc) => {
     console.log(`catch err: ${err}`);
   }
 }
-
 
 const Main = () => 
 {
@@ -32,16 +30,14 @@ const Main = () =>
   const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
 
   return (
-    <ProductContext.Provider value={{products, setProducts, categories, currentCategory, setCategory}}>
-      <div>
-          <Routes>
-            <Nav/>
-            <ToggleButton/>
-            <SectionProduct/>
-            <ShoppingCart/>
-          </Routes>
-      </div>
-    </ProductContext.Provider>
+    <BrowserRouter>
+      <ProductContext.Provider value={{products, setProducts, categories, currentCategory, setCategory}}>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+        </Routes>
+      </ProductContext.Provider>
+    </BrowserRouter>
   );
 }
 
