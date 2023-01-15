@@ -3,20 +3,10 @@ import {Routes, Route, BrowserRouter} from "react-router-dom"
 import './App.css';
 import ProductContext from './components/ProductContext/ProductContext'
 import * as Constants from "./constants"
+import { GetJson } from './hooks/GetJson';
 import About from './views/About';
 import Home from './views/Home';
-
-
-const resJsonGET = async (address, setFunc) => {
-  try{
-    const response = await fetch (address);
-    const resJson = await response.json();
-    setFunc(resJson);
-  }
-  catch(err){
-    console.log(`catch err: ${err}`);
-  }
-}
+import ProductDetails from './views/ProductDetails';
 
 const Main = () => 
 {
@@ -24,7 +14,7 @@ const Main = () =>
   const [currentCategory, setCategory] = useState(Constants.ALL_CATEGORIES);
 
   useEffect(() => {
-    resJsonGET("https://fakestoreapi.com/products", setProducts);
+    GetJson("https://fakestoreapi.com/products", setProducts);
   },[]);
 
   const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
@@ -35,6 +25,7 @@ const Main = () =>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/products/:productId" element={<ProductDetails/>} />
         </Routes>
       </ProductContext.Provider>
     </BrowserRouter>
