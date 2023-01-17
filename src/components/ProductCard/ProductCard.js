@@ -18,12 +18,12 @@ const ProductCard = ({id, imgSrc, title, price, productToCart, amount}) => {
                 <h5>{title}</h5>
                 <h6>{price}</h6>
                 <div className="product-amount">
-                    <IconButton color="primary" aria-label="add to shopping cart">
-                        <Add onClick={()=> productToCart(id,"increment")}/>
+                    <IconButton color="primary" aria-label="add to shopping cart"  onClick={()=> productToCart(id,"increment")}>
+                        <Add />
                     </IconButton>
                     <p>{amount}</p>
-                    <IconButton color="primary" aria-label="add to shopping cart">
-                        <Remove onClick={()=> productToCart(id,"decrement")}/>
+                    <IconButton color="primary" aria-label="add to shopping cart" onClick={()=> productToCart(id,"decrement")}>
+                        <Remove />
                     </IconButton>
                 </div>
             </div>

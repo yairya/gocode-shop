@@ -13,8 +13,8 @@ const ShoppingCartProduct = ({id, imgSrc, title, price, amount, removeFromCart})
                 <h5>serial number: {id}</h5>
                 <p>amount: {amount}</p>
                 <h6>total price: {price * amount}</h6>
-                <IconButton color="primary" aria-label="add to shopping cart">
-                        <RemoveShoppingCart onClick={()=> removeFromCart(id)}/>
+                <IconButton color="primary" aria-label="add to shopping cart" onClick={()=> removeFromCart(id)}>
+                        <RemoveShoppingCart />
                 </IconButton>
             </div>
       </div>

@@ -24,8 +24,8 @@ export default function SelectSmall() {
         value={option}
         label="Filter by"
         onChange={handleChange}>
-        <MenuItem value={Constants.ALL_CATEGORIES}>{Constants.ALL_CATEGORIES}</MenuItem>
-        {categories.map( (option,index) => <MenuItem value={option}>{option}</MenuItem>)}
+        <MenuItem key={0} value={Constants.ALL_CATEGORIES}>{Constants.ALL_CATEGORIES}</MenuItem>
+        {categories.map( (option,index) => <MenuItem key={index+1} value={option}>{option}</MenuItem>)}
       </Select>
     </FormControl>
   );
