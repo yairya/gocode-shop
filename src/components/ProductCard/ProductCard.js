@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./ProductCard.css"
+import IconButton from '@mui/material/IconButton';
+import Add from '@mui/icons-material/Add';
+import Remove from '@mui/icons-material/Remove';
+
 
 const ProductCard = ({id, imgSrc, title, price, productToCart, amount}) => {
     return(
@@ -13,9 +17,15 @@ const ProductCard = ({id, imgSrc, title, price, productToCart, amount}) => {
             <div className="product-info">
                 <h5>{title}</h5>
                 <h6>{price}</h6>
-                <button onClick={()=> productToCart(id,"increment")}>Add to cart</button>
-                <p>{amount}</p>
-                <button onClick={()=> productToCart(id,"decrement")}>Remove from cart</button>
+                <div className="product-amount">
+                    <IconButton color="primary" aria-label="add to shopping cart">
+                        <Add onClick={()=> productToCart(id,"increment")}/>
+                    </IconButton>
+                    <p>{amount}</p>
+                    <IconButton color="primary" aria-label="add to shopping cart">
+                        <Remove onClick={()=> productToCart(id,"decrement")}/>
+                    </IconButton>
+                </div>
             </div>
       </div>
     )
