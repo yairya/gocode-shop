@@ -14,7 +14,7 @@ const ProductDetails = () => {
 
       console.log(product);
     return(
-        <div className="product-card">
+        <div className="product-details">
             <h5>{product.title} - {product.id}</h5>
             <div className="product-image">
                 <img src={product.image} alt="product img"/>

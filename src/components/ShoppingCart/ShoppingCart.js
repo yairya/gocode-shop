@@ -38,14 +38,15 @@ export default function ShoppingCart() {
 
     const shoppingCartProducts = products.filter(product => product.amount > 0)
         .map( (product, index) =>(
-          <Box display="flex" flexDirection="row" justifyContent="space-around" alignContent="center" width="30%" border="2px black solid" >
+          <div style={{display:"flex", flexDirection:"row", justifyContent:"space-around", alignContent:"center", width:"30%", border:"2px black solid" }}>
             <ShoppingCartProduct key={index} id={product.id} imgSrc={product.image} title={product.title} price={product.price} amount={product.amount} removeFromCart={RemoveFromCart}/>
             <Divider />
-          </Box>
+          </div>
         ));
 
   const list = () => (
     <Box
+      style={{display:"flex"}}
       sx={{ width: 500 }}
       role="presentation"
       onKeyDown={toggleDrawer(false)}
