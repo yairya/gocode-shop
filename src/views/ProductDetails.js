@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const [product, setProduct] = useState("");
 
     useEffect(() => {
-        GetJson("https://fakestoreapi.com/products/"+urlParams.productId, setProduct);
+        GetJson("http://localhost:8080/api/eshop/product/"+urlParams.productId, setProduct);
       },[]);
 
       console.log(product);

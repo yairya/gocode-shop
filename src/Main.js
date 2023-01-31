@@ -14,7 +14,7 @@ const Main = () =>
   const [currentCategory, setCategory] = useState(Constants.ALL_CATEGORIES);
 
   useEffect(() => {
-    GetJson("https://fakestoreapi.com/products", setProducts);
+    GetJson("http://localhost:8080/api/eshop/product", setProducts);
   },[]);
 
   const categories = products.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
